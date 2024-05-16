@@ -3,18 +3,25 @@ Semantic Segmentation of bicycle lanes in Neuperlach-Munich area.
 
 ## General Info:
 
-The model was trained on a custom augmented dataset consisting of around 500 images, gathered from GoPro Hero 4 mounted on bike, and masks labeled on makesense.ai website.
-
-Currently the model is trained on 469 images (including augmented ones), for 19 epochs on google colab, and in my humble opinion, performs really well for this little training.
+The model was initially trained on a custom augmented dataset consisting of around 500 images for 19 epochs, gathered from GoPro Hero 4 mounted on bike, and masks labeled on makesense.ai website.
+Later the training of the model was continued on a new augmented dataset consisting of 1970 images, trained for additional 40 epochs.
 
 ### Below you can see some of the predicted masks:
 
-![5](https://github.com/gunslinger7/U-Net-Bike-Lane-Munich/assets/167663925/3e52e946-033a-4a4b-8e7e-96162baa213c)
+
+![1](https://github.com/gunslinger7/U-Net-Bike-Lane-Munich/assets/167663925/9ac4d08b-a966-4674-8216-640e400e00f4)
 
 
-#### There are some falsely detected spots, which are the consequence of little training data. I presume doubling the size of the dataset would fix this issue.
-![4](https://github.com/gunslinger7/U-Net-Bike-Lane-Munich/assets/167663925/bf966840-5b8d-4e5f-8f68-b30691734b77)
+![2](https://github.com/gunslinger7/U-Net-Bike-Lane-Munich/assets/167663925/bf482277-50c1-4ca5-b3e0-2418b3325e6c)
 
-![1](https://github.com/gunslinger7/U-Net-Bike-Lane-Munich/assets/167663925/8369f8ac-0f19-4c5c-8e54-60b112788ec6)
+![3](https://github.com/gunslinger7/U-Net-Bike-Lane-Munich/assets/167663925/8db496ae-73f8-4e82-a4b0-769ded8fe13c)
 
-#### All in all, it's clear that the model lacks training data, which is the main objective now.
+### There are some falsely segmented spots which indicate lacking in data variety.
+
+![4](https://github.com/gunslinger7/U-Net-Bike-Lane-Munich/assets/167663925/12192374-e783-40fd-83c5-3f112f51924c)
+
+![5](https://github.com/gunslinger7/U-Net-Bike-Lane-Munich/assets/167663925/072bdfec-38ae-401e-84c8-34693fa6db72)
+
+Still, the model performs pretty well considering this little training data. It is also prone to quickly genearalize to new types of bike lanes with few examples.
+
+#### All in all, it's clear that the model lacks variety in training data, but is able to quickly generalize to new data with just few examples.
